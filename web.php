@@ -35,7 +35,7 @@ if (isset($_POST['url'])) {
 		$error[] = "Please remove fbclid before sharing URLs.";
 
 	$domain = $matches['domain'] ?? 'url broken';
-	if (strtolower(substr($domain, -5)) == 'tg.pe')
+	if (strtolower(substr($domain, -5)) == 'ptr.tw')
 		$error[] = 'Short enough';
 
 
@@ -50,17 +50,17 @@ if (isset($_POST['url'])) {
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>tg.pe URL Shortener by.Sean</title>
+	<title>ptr.tw URL Shortener by.Sean</title>
 	<link rel="icon" type="image/png" href="/logo-192.png" sizes="192x192">
 	<link rel="icon" type="image/png" href="/logo-128.png" sizes="128x128">
 	<link rel="icon" type="image/png" href="/logo-64.png" sizes="64x64">
 	<link rel="icon" type="image/png" href="/logo.png" sizes="680x680">
 	<link rel="stylesheet" href="style.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta name="keywords" content="url shortener, tgpe">
+	<meta name="keywords" content="url shortener, ptr.tw">
 	<meta name="description" content="Shortest Shortener">
-	<meta property="og:title" content="tg.pe URL Shortener">
-	<meta property="og:url" content="https://tg.pe/">
+	<meta property="og:title" content="ptr.tw URL Shortener">
+	<meta property="og:url" content="https://ptr.tw/">
 	<meta property="og:image" content="/logo.png">
 	<meta property="og:image:secure_url" content="/logo.png">
 	<meta property="og:image:type" content="image/png">
@@ -75,7 +75,7 @@ if (isset($_POST['url'])) {
 <div class="content">
 	<img src="logo_boderless.png" style="height: 40vh; margin-top: 40px;">
 	<h1>URL Shortener</h1>
-	<h2>Shorten Your URL: <a href="https://tg.pe/bot">tg.pe/bot</a></h2>
+	<h2>Shorten Your URL: <a href="https://ptr.tw/bot">ptr.tw/bot</a></h2>
 
 	<div id="gen">
 		<big>Limited Online Version</big>
@@ -90,7 +90,7 @@ if (!isset($_POST['url'])) {
 				<span></span>
 			</span>
 			<br>
-			<span style="color: darkgray;">Custom Short Link: https://tg.pe/<input name="code" size="4" disabled="1" placeholder="x123"><br>
+			<span style="color: darkgray;">Custom Short Link: https://ptr.tw/<input name="code" size="4" disabled="1" placeholder="x123"><br>
 			<button class="button" type="submit">Shorten!</button>
 			</p>
 		</form>
@@ -102,7 +102,7 @@ if (!isset($_POST['url'])) {
 EOF;
 	} else if (!empty($code)) {
 		echo <<<EOF
-<p>Your Link: <input id="link" value="https://tg.pe/$code" size="14"><button id="copyButton" onclick="copyLink()">Copy</button></p>
+<p>Your Link: <input id="link" value="https://ptr.tw/$code" size="14"><button id="copyButton" onclick="copyLink()">Copy</button></p>
 <script>
 function copyLink() {
 	var copyText = document.getElementById("link");
@@ -134,7 +134,7 @@ EOF;
 </div>
 <div class="footer">
 	<footer id="footer">
-		<p>Source Code: <a href="https://github.com/Sea-n/tgpe">Sea-n/tgpe</a><br>
+		<p>Source Code: <a href="https://github.com/Sea-n/ptr.tw">Sea-n/ptr.tw</a><br>
 		Developed by <a href="https://www.sean.taipei/">Sean</a>.</p>
 	</footer>
 </div>

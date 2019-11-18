@@ -1,4 +1,4 @@
-# tg.pe URL Shortener
-![](https://tg.pe/logo.png)
+# ptr.tw URL Shortener
+![](https://ptr.tw/logo.png)
 
-Link: [tg.pe/bot](https://tg.pe/bot)
+Link: [ptr.tw/bot](https://ptr.tw/bot)

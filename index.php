@@ -64,14 +64,14 @@ function error(int $code, string $msg) {
 	echo <<<EOF
 <html>
 <head>
-	<meta http-equiv="refresh" content="10;url=https://tg.pe/" />
+	<meta http-equiv="refresh" content="10;url=https://ptr.tw/" />
 </head>
 <body>
 	<center>
 		<h1>$msg</h1>
 		<hr>
 		<p>Please check your URL again.</p>
-		<p>Here is <a href="https://tg.pe/">tg.pe</a> URL Shortener, provided by <a href="https://tg.pe/dev">@SeanChannel</a></p>
+		<p>Here is <a href="https://ptr.tw/">ptr.tw</a> URL Shortener, provided by <a href="https://ptr.tw/dev">@SeanChannel</a></p>
 	</center>
 </body>
 EOF;

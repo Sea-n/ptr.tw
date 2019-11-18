@@ -1,9 +1,9 @@
 <?php
 /* Only Command-line Execution Allowed */
 if (!isset($argv[1]))
-	exit;
+	exit('Command line use only!');
 
-require('/usr/share/nginx/tg.pe/database.php');
+require('/usr/share/nginx/ptr.tw/database.php');
 $db = new MyDB();
 
 

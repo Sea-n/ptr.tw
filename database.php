@@ -3,7 +3,7 @@ class MyDB {
 	public $pdo;
 
 	public function __construct() {
-		$this->pdo = new PDO('sqlite:/usr/share/nginx/tg.pe/sqlite.db');
+		$this->pdo = new PDO('sqlite:/usr/share/nginx/ptr.tw/sqlite.db');
 		$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 

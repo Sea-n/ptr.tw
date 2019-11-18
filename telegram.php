@@ -1,10 +1,10 @@
 <?php
-/* This file hard-linked from sean.taipei/telegram/tgpe.php to tg.pe/telegram.php */
+/* This file hard-linked from sean.taipei/telegram/ptr.php to ptr.tw/telegram.php */
 if (!isset($TG))
 	exit;
 
-require('/usr/share/nginx/tg.pe/config.php');
-require('/usr/share/nginx/tg.pe/database.php');
+require('/usr/share/nginx/ptr.tw/config.php');
+require('/usr/share/nginx/ptr.tw/database.php');
 $db = new MyDB();
 
 
@@ -16,7 +16,7 @@ You can also specific your short code.
 
 <b>Usage</b>
 For instance, send me following text:
-<pre>https://t.me/tgpebot bot</pre>
+<pre>https://t.me/ptrTWbot bot</pre>
 
 Note: You can use <b>a-z</b>, <b>A-Z</b> and <b>0-9</b>.
 Minimum length is <b>3</b> characters.
@@ -28,7 +28,7 @@ Minimum length is <b>3</b> characters.
 
 <b>About</b>
 Developer: @SeanChannel
-Source Code: tg.pe/repo
+Source Code: ptr.tw/repo
 EOF;
 
 if (strpos($TG->data['message']['from']['language_code'], 'zh') !== false)
@@ -37,7 +37,7 @@ if (strpos($TG->data['message']['from']['language_code'], 'zh') !== false)
 
 <b>【使用方式】</b>
 如果要自訂短網址，可參考以下範例：
-<pre>https://t.me/tgpebot bot</pre>
+<pre>https://t.me/ptrTWbot bot</pre>
 
 注意：目前僅接受英數字（A-Z, a-z, 0-9）組合、最短 3 個字
 
@@ -47,7 +47,7 @@ if (strpos($TG->data['message']['from']['language_code'], 'zh') !== false)
 
 <b>【關於】</b>
 開發者： @SeanChannel
-原始碼： tg.pe/repo
+原始碼： ptr.tw/repo
 EOF;
 
 
@@ -90,7 +90,7 @@ if (preg_match('#^[/!](?<cmd>\w+)(?:@' . $TG->botName . ')?(?:\s+(?<args>.+))?$#
 
 			if (!($i%5))
 				$text .= "\n";
-			$text .= ($i+1) . ". tg.pe/{$data[$i]['code']}  ";
+			$text .= ($i+1) . ". ptr.tw/{$data[$i]['code']}  ";
 			$text .= "(<code>$url</code>)\n";
 		}
 		$TG->sendMsg([
@@ -146,7 +146,7 @@ if (!filter_var($url, FILTER_VALIDATE_URL)) {
 	exit;
 }
 
-if (strtolower(substr($domain, -5)) == 'tg.pe') {
+if (strtolower(substr($domain, -5)) == 'ptr.tw') {
 	$TG->sendMsg([
 		'text' => 'This URL is short enough.'
 	]);
@@ -162,7 +162,7 @@ if (strlen($code) > 16) { /* Check Code Length */
 } else if (strlen($code) >= 3) { /* Check Code Existance */
 	if ($data = $db->findByCode($code)) {
 		$TG->sendMsg([
-			'text' => "Already Exist: https://tg.pe/$code\n\n" .
+			'text' => "Already Exist: https://ptr.tw/$code\n\n" .
 			"Original URL: {$data['url']}"
 		]);
 		exit;
@@ -170,7 +170,7 @@ if (strlen($code) > 16) { /* Check Code Length */
 } else if (strlen($code) === 0) { /* Allocate 3-char not-exists code */
 	if ($code = $db->findCodeByUrl($url)) {
 		$TG->sendMsg([
-			'text' => "Success!\n\nhttps://tg.pe/$code"
+			'text' => "Success!\n\nhttps://ptr.tw/$code"
 		]);
 		exit;
 	} else
@@ -215,7 +215,7 @@ $error = $db->insert($code, $url, $author);
 
 if ($error[0] === '00000')
 	$TG->sendMsg([
-		'text' => "Success!\n\nhttps://tg.pe/$code"
+		'text' => "Success!\n\nhttps://ptr.tw/$code"
 	]);
 else
 	$TG->sendMsg([
