@@ -13,7 +13,9 @@ if ($code == '') { // index homepage
 if (!preg_match('#^[\w_-]+(\.[a-z]+)?$#', $code))
 	error(400, 'Code invalid');
 
-[$code, $ext] = explode('.', $code, 2);
+$code = explode('.', $code, 2);
+$ext = $code[1] ?? '';
+$code = $code[0];
 
 $db = new MyDB();
 
@@ -22,7 +24,7 @@ if (!$data = $db->findByCode($code))
 
 $url = $data['url'];
 
-if (preg_match("#(TelegramBot|TwitterBot|PlurkBot|facebookexternalhit|ZXing)#i", $_SERVER['HTTP_USER_AGENT'])
+if (preg_match("#(TelegramBot|TwitterBot|PlurkBot|facebookexternalhit|ZXing)#i", $_SERVER['HTTP_USER_AGENT'] ?? '')
 	|| (substr($url, -strlen($ext)) == $ext && in_array($ext, ['jpg', 'jpeg', 'png', 'bmp', 'gif', 'webp']))) {
 	header("Location: $url");
 	exit;
@@ -58,7 +60,7 @@ function error(int $code, string $msg) {
 		break;
 	}
 
-	if (strlen($_SERVER['HTTP_USER_AGENT']) < 20)
+	if (strlen($_SERVER['HTTP_USER_AGENT'] ?? '') < 20)
 		exit($msg); // Message Only for bots
 
 	echo <<<EOF
