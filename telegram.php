@@ -7,6 +7,12 @@ require('/usr/share/nginx/ptr.tw/config.php');
 require('/usr/share/nginx/ptr.tw/database.php');
 $db = new MyDB();
 
+$TG->sendMsg([
+	'parse_mode' => 'HTML',
+	'text' => 'This bot is end of service, please use @tgpebot instead.',
+]);
+exit;
+
 
 /* Message Texts */
 $msg_help = <<<EOF

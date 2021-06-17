@@ -1,5 +1,7 @@
 <?php
 if (isset($_POST['url'])) {
+	header('Location: https://tg.pe/');
+	exit;
 	require('database.php');
 	$db = new MyDB();
 	$error = []; // Default no error
@@ -72,6 +74,8 @@ if (isset($_POST['url'])) {
 <div class="content">
 	<img src="logo_boderless.png" style="height: 40vh; margin-top: 40px;">
 	<h1>URL Shortener</h1>
+	<big>Please use <a href="https://tg.pe/">tg.pe</a> instead.</big>
+<!--
 	<h2>Shorten Your URL: <a href="https://ptr.tw/bot">ptr.tw/bot</a></h2>
 
 	<div id="gen">
@@ -128,6 +132,7 @@ EOF;
 		Use Telegram Bot to get unlimited access for free.</small>
 	</div>
 	<br>
+-->
 </div>
 <div class="footer">
 	<footer id="footer">
